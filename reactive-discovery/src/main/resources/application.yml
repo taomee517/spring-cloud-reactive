@@ -1,0 +1,28 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: reactive-discovery
+
+  cloud:
+    config:
+      enabled: false
+
+
+eureka:
+  client:
+    service-url:
+#      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:${server.port}/eureka/,http://${spring.security.user.name}:${spring.security.user.password}@localhost:${server.port}/eureka/
+      defaultZone: http://localhost:8761/eureka
+    # 关闭eureka服务的注册
+    register-with-eureka: false
+    #是否检索服务
+    fetch-registry: false
+  instance:
+    instance-id: ${spring.cloud.client.ipaddress}:${server.port}
+  server:
+    #本机测试下关闭自我保护机制
+    enable-self-preservation: false
+    #驱逐下线的服务，间隔,5秒，默认是60，建议dev和test环境配置
+    eviction-interval-timer-in-ms: 10000

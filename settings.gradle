@@ -1,0 +1,4 @@
+rootProject.name = 'spring-cloud-reactive'
+include 'reactive-discovery'
+include 'reactive-gateway'
+
