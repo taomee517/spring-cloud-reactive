@@ -1,0 +1,30 @@
+buildscript {
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.3.5.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'org.demo'
+version = '1.0.0'
+
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+dependencies {
+    // feign-reactor-webclient
+    compile group: 'com.playtika.reactivefeign', name: 'feign-reactor-webclient', version: "${feignReactorVersion}"
+
+    // feign-reactive-cloud
+    compile group: 'com.playtika.reactivefeign', name: 'feign-reactor-cloud', version: "${feignReactorVersion}"
+
+    // feign-reactor-spring-configuration
+    compile group: 'com.playtika.reactivefeign', name: 'feign-reactor-spring-configuration', version: "${feignReactorVersion}"
+
+}

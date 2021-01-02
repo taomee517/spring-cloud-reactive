@@ -1,0 +1,22 @@
+server:
+  port: 9730
+
+spring:
+  application:
+    name: user-service
+  r2dbc:
+    url: r2dbcs:mysql://127.0.0.1:3306/db_webflux?useUnicode=true&characterEncoding=utf8&serverZoneId=Asia/Shanghai&useSSL=false
+    username: root
+    password: 123456
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+  instance:
+    instance-id: ${spring.cloud.client.ipaddress}:${server.port}

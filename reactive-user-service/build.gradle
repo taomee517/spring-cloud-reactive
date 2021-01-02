@@ -1,0 +1,47 @@
+buildscript {
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.3.5.RELEASE")
+    }
+}
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'org.demo'
+version = '1.0.0'
+
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+dependencies {
+    compile(project(":reactive-user-api")){
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+
+    compile (group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client'){
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+
+    compile("org.springframework.boot:spring-boot-starter-webflux") {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+
+    compile("org.springframework.boot:spring-boot-starter-data-r2dbc") {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+
+    compile("org.springframework.boot:spring-boot-starter-data-redis-reactive") {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+
+    // reactive-mysql
+    compile group: 'dev.miku', name: 'r2dbc-mysql', version: "${reactiveMysqlVersion}"
+
+    /**log4j2*/
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
