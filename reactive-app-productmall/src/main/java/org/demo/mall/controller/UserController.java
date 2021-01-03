@@ -7,7 +7,6 @@ import org.demo.user.api.UserApi;
 import org.demo.user.entity.dto.UserCreateDTO;
 import org.demo.user.entity.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
