@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: reactive-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.151:8848
+        namespace: b1d813fa-fae2-405f-91ca-e4675e747720
+      config:
+        server-addr: 192.168.1.151:8848
+        file-extension: yaml
+        group: REACTIVE_GROUP
+        namespace: b1d813fa-fae2-405f-91ca-e4675e747720
+        refresh-enabled: true
