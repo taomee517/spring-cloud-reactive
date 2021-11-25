@@ -55,8 +55,7 @@ allprojects {
         set('feignReactorVersion', '2.0.25')
         set('swaggerVersion', '3.0.0')
         set('reactiveMysqlVersion', '0.8.2.RELEASE')
-        set('rxJavaVersion', '2.2.0')
-        set('rxStreamVersion', '1.2.1')
+        set('springNacosVersion', '2.2.1.RELEASE')
     }
 
     buildscript {

@@ -28,11 +28,11 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     //spring cloud nacos
-    compile(group: 'com.alibaba.cloud', name: 'spring-cloud-starter-alibaba-nacos-config', version:"2.2.1.RELEASE"){
+    compile(group: 'com.alibaba.cloud', name: 'spring-cloud-starter-alibaba-nacos-config', version:"${springNacosVersion}"){
         exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
     }
 
-    compile (group: 'com.alibaba.cloud', name: 'spring-cloud-starter-alibaba-nacos-discovery', version:"2.2.1.RELEASE"){
+    compile (group: 'com.alibaba.cloud', name: 'spring-cloud-starter-alibaba-nacos-discovery', version:"${springNacosVersion}"){
         exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
     }
 
