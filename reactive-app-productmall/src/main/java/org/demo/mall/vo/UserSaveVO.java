@@ -1,10 +1,9 @@
-package org.demo.user.entity.vo;
+package org.demo.mall.vo;
 
 import lombok.Data;
 
 @Data
-public class UserVO {
-    private Integer userId;
+public class UserSaveVO {
     private String username;
     private String password;
     private String phoneNo;

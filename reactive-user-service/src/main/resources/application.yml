@@ -20,3 +20,4 @@ eureka:
     fetch-registry: true
   instance:
     instance-id: ${spring.cloud.client.ipaddress}:${server.port}
+    status-page-url: http://${spring.cloud.client.ipaddress}:${server.port}/swagger-ui/index.html

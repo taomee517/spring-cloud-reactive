@@ -4,4 +4,5 @@ include 'reactive-gateway'
 include 'reactive-user-service'
 include 'reactive-user-api'
 include 'reactive-app-productmall'
+include 'reactive-common'
 

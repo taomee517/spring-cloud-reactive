@@ -1,4 +1,4 @@
-package org.demo.mall.config;
+package org.demo.user.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,8 +20,8 @@ public class SwaggerConfig {
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(new ApiInfoBuilder()
-                        .description("product mall")
-                        .title("Reactive API")
+                        .description("user service")
+                        .title("User Reactive API")
                         .version("1.0.0")
                         .build())
                 .select()
@@ -29,7 +29,7 @@ public class SwaggerConfig {
                 // 必须加Api注解才能生效
 //                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
                 // 指定controller处理类的package路径
-                .apis(RequestHandlerSelectors.basePackage("org.demo.mall.controller"))
+                .apis(RequestHandlerSelectors.basePackage("org.demo.user.controller"))
                 .paths(PathSelectors.any())
                 .build();
 

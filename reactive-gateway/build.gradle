@@ -18,13 +18,9 @@ dependencyManagement {
 }
 
 dependencies {
-    compile (group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client'){
-        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
-    }
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client'
 
-    compile (group: 'org.springframework.cloud', name: 'spring-cloud-starter-gateway'){
-        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
-    }
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-gateway'
 
     /**log4j2*/
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2'

@@ -1,10 +1,15 @@
 package org.demo.user.service.impl;
 
-import org.demo.user.entity.User;
+import com.alibaba.fastjson.JSON;
+import org.apache.commons.lang3.StringUtils;
+import org.demo.common.query.KeywordQuery;
+import org.demo.user.pojo.User;
 import org.demo.user.repository.UserRepository;
 import org.demo.user.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.Objects;
@@ -29,7 +34,15 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public Mono<User> getById(int userId) {
+    public Mono<User> getById(Integer userId) {
         return userRepository.findById(userId);
+    }
+
+
+    @Override
+    public Flux<User> query(KeywordQuery query) {
+//        return userRepository.findAll(Sort.by(Sort.Direction.ASC, "user_id"))
+//                .filter(user -> StringUtils.contains(user.getUsername(), query.getKeyword()));
+        return userRepository.findAllByUsernameContains(query.getKeyword());
     }
 }
