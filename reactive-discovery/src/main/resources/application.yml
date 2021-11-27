@@ -25,4 +25,4 @@ eureka:
     #本机测试下关闭自我保护机制
     enable-self-preservation: false
     #驱逐下线的服务，间隔,5秒，默认是60，建议dev和test环境配置
-    eviction-interval-timer-in-ms: 10000
+    eviction-interval-timer-in-ms: 5000

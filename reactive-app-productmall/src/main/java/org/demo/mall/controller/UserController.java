@@ -41,7 +41,7 @@ public class UserController {
         return userApi.getUser(id)
                 .map(this::userInfoDTO2VO)
                 .onErrorMap(throwable -> {
-                    log.error(throwable.getMessage(),throwable);
+                    log.error("查询用户信息时发生异常：{}", throwable.getMessage(),throwable);
                     return new Exception(throwable.getMessage());
                 });
     }

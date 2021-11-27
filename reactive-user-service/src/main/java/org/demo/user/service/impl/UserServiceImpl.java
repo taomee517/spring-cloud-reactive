@@ -43,6 +43,7 @@ public class UserServiceImpl implements IUserService {
     public Flux<User> query(KeywordQuery query) {
 //        return userRepository.findAll(Sort.by(Sort.Direction.ASC, "user_id"))
 //                .filter(user -> StringUtils.contains(user.getUsername(), query.getKeyword()));
-        return userRepository.findAllByUsernameContains(query.getKeyword());
+//        return userRepository.findAllByUsernameContains(query.getKeyword());
+        return userRepository.findByUsernameLike(StringUtils.join("%", query.getKeyword(), "%"));
     }
 }
