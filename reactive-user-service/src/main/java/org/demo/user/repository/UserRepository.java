@@ -6,8 +6,6 @@ import reactor.core.publisher.Flux;
 
 public interface UserRepository extends R2dbcRepository<User, Integer> {
 
-//    Flux<User> findUsersByUsernameLikeOrPhoneNoLike(String username, String phoneNo);
-
     Flux<User> findByUsernameLike(String keyword);
 
     Flux<User> findAllByUsernameContains(String keyword);

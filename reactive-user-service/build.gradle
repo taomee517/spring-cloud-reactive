@@ -25,16 +25,18 @@ dependencies {
 
     implementation "org.springframework.boot:spring-boot-starter-webflux"
 
-    implementation "org.springframework.boot:spring-boot-starter-data-r2dbc"
 
     implementation "org.springframework.boot:spring-boot-starter-data-redis-reactive"
 
-    // reactive-mysql
+    implementation "org.springframework.boot:spring-boot-starter-data-r2dbc"
+
+//    // reactive-mysql
     implementation group: 'dev.miku', name: 'r2dbc-mysql', version: "${reactiveMysqlVersion}"
 
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
 
     /**log4j2*/
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

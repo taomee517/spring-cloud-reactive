@@ -1,0 +1,5 @@
+spring:
+  r2dbc:
+    url: r2dbcs:mysql://127.0.0.1:3306/test_webflux?useUnicode=true&characterEncoding=utf8&serverZoneId=Asia/Shanghai&useSSL=false
+    username: root
+    password: 123456
