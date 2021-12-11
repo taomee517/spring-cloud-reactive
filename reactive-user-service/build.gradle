@@ -19,24 +19,16 @@ dependencyManagement {
 
 
 dependencies {
-    implementation(project(":reactive-user-api"))
-
-    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client'
-
-    implementation "org.springframework.boot:spring-boot-starter-webflux"
-
+    compile(project(":reactive-service-common"))
 
     implementation "org.springframework.boot:spring-boot-starter-data-redis-reactive"
 
     implementation "org.springframework.boot:spring-boot-starter-data-r2dbc"
 
-//    // reactive-mysql
+    // reactive-mysql
     implementation group: 'dev.miku', name: 'r2dbc-mysql', version: "${reactiveMysqlVersion}"
 
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
-
-    /**log4j2*/
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

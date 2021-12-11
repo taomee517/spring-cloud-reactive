@@ -1,0 +1,15 @@
+server:
+  port: 9733
+
+spring:
+  application:
+    name: app-sso
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+  instance:
+    instance-id: ${spring.cloud.client.ipaddress}:${server.port}
+    status-page-url: http://${spring.cloud.client.ipaddress}:${server.port}/swagger-ui/index.html

@@ -1,0 +1,42 @@
+buildscript {
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.3.5.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'java-library'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group 'org.demo'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+dependencies {
+    api (project(":reactive-common"))
+    api (project(":reactive-user-api"))
+    api group: 'org.springframework.boot', name: 'spring-boot-starter-webflux'
+    api group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client'
+
+
+    /**log4j2*/
+    api (group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2'){
+        exclude group: 'org.apache.logging.log4j', module: 'log4j-api'
+        exclude group: 'org.apache.logging.log4j', module: 'log4j-core'
+    }
+
+    api group: 'org.apache.logging.log4j', name: 'log4j-api', version: "${log4j2Version}"
+    api group: 'org.apache.logging.log4j', name: 'log4j-core', version: "${log4j2Version}"
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

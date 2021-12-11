@@ -5,4 +5,6 @@ include 'reactive-user-service'
 include 'reactive-user-api'
 include 'reactive-app-productmall'
 include 'reactive-common'
+include 'reactive-sso'
+include 'reactive-service-common'
 
